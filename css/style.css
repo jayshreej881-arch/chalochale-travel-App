@@ -1,0 +1,15 @@
+/* ChaloChale custom styles */
+
+/* Smooth transition when switching themes */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+/* Keep footer dark in both themes for contrast */
+footer.bg-dark {
+  background-color: #212529 !important;
+}

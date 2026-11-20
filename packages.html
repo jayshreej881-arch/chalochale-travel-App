@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -8,6 +8,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .package-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .package-card .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .package-card .price-tag {
+      font-size: 1.5rem;
+    }
+
+    .package-card .badge-duration {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+  </style>
 </head>
 <body>
 
@@ -34,13 +62,128 @@
 
         <a href="signup.html" class="btn btn-warning ms-lg-3 mt-2 mt-lg-0">Signup</a>
         <a href="login.html" class="btn btn-warning ms-lg-3 mt-2 mt-lg-0">Login</a>
+        <button id="themeToggle" class="btn btn-outline-light border-0 ms-2" type="button" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </div>
     </div>
   </nav>
 
-  <main class="container py-5">
-    <h1 class="fw-bold mb-3">Packages</h1>
-    <p class="text-secondary">Browse our travel packages and find your perfect trip.</p>
+  <!--hero section-->
+  <section class="py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/beach.jpg') center/cover no-repeat;">
+    <div class="container">
+      <h1 class="fw-bold display-5 mb-3">Travel Packages</h1>
+      <p class="lead mb-0">Affordable trips with flights, hotels and sightseeing included.</p>
+    </div>
+  </section>
+
+  <!--packages grid-->
+  <main class="container my-5">
+    <div class="row g-4">
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card package-card shadow-sm h-100">
+          <div class="position-relative">
+            <img src="images/goa 2.jpg" class="card-img-top" alt="Goa Beach Package">
+            <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 5D/4N</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-bold">Goa Beach Package</h5>
+            <p class="text-secondary flex-grow-1">Sun, sand and nightlife — flights, hotel and sightseeing included.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="price-tag fw-bold text-primary">&#8377;15,999</span>
+              <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card package-card shadow-sm h-100">
+          <div class="position-relative">
+            <img src="images/mountain.jpg" class="card-img-top" alt="Manali Adventure Package">
+            <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 6D/5N</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-bold">Manali Adventure Package</h5>
+            <p class="text-secondary flex-grow-1">Trekking, snow points and cozy mountain stays.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="price-tag fw-bold text-primary">&#8377;18,499</span>
+              <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card package-card shadow-sm h-100">
+          <div class="position-relative">
+            <img src="images/kerala.jpg" class="card-img-top" alt="Kerala Backwater Package">
+            <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 4D/3N</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-bold">Kerala Backwater Package</h5>
+            <p class="text-secondary flex-grow-1">Houseboat cruise, ayurveda and green countryside escapes.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="price-tag fw-bold text-primary">&#8377;12,999</span>
+              <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card package-card shadow-sm h-100">
+          <div class="position-relative">
+            <img src="images/kashmir.jpg" class="card-img-top" alt="Kashmir Package">
+            <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 7D/6N</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-bold">Kashmir Delight Package</h5>
+            <p class="text-secondary flex-grow-1">Dal Lake houseboat, Gulmarg skiing and Srinagar sightseeing.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="price-tag fw-bold text-primary">&#8377;24,999</span>
+              <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card package-card shadow-sm h-100">
+          <div class="position-relative">
+            <img src="images/jaipur.jpg" class="card-img-top" alt="Royal Rajasthan Package">
+            <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 5D/4N</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-bold">Royal Rajasthan Package</h5>
+            <p class="text-secondary flex-grow-1">Jaipur forts, Jodhpur blue city and camel safari fun.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="price-tag fw-bold text-primary">&#8377;13,499</span>
+              <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card package-card shadow-sm h-100">
+          <div class="position-relative">
+            <img src="images/tajmahal.jpg" class="card-img-top" alt="Taj Mahal Special">
+            <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 3D/2N</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-bold">Taj Mahal Special</h5>
+            <p class="text-secondary flex-grow-1">Sunrise at the Taj, Agra Fort and Mughal heritage tour.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="price-tag fw-bold text-primary">&#8377;9,999</span>
+              <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <footer class="bg-dark text-white mt-5">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -8,6 +8,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .package-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .package-card .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .package-card .price-tag {
+      font-size: 1.5rem;
+    }
+
+    .package-card .badge-duration {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,6 +65,9 @@
 
           <a href="signup.html" class="btn btn-warning ms-lg-3 mt-2 mt-lg-0">Signup</a>
           <a href="login.html" class="btn btn-warning ms-lg-3 mt-2 mt-lg-0">Login</a>
+          <button id="themeToggle" class="btn btn-outline-light border-0 ms-2" type="button" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
         </div>
       </div>
     </nav>
@@ -59,29 +90,35 @@
           <div class="carousel-inner">
 
             <div class="carousel-item active">
-              <img src="images/goa 2.jpg" class="d-block w-100" height="500" alt="Beach">
+              <video autoplay muted loop playsinline class="d-block w-100" style="height: 500px; object-fit: cover;">
+                <source src="assets/beach-video.mp4" type="video/mp4">
+              </video>
               <div class="carousel-caption">
                 <h2 class="fw-bold">Explore Beautiful Beaches</h2>
                 <p>plan your next vacation with ChaloChale.</p>
-                <button class="btn btn-primary">Explore Now</button>
+                <a href="destination.html" class="btn btn-primary">Explore Now</a>
               </div>
             </div>
 
             <div class="carousel-item">
-              <img src="images/mountain.jpg" class="d-block w-100" height="500" alt="Mountains">
+              <video autoplay muted loop playsinline class="d-block w-100" style="height: 500px; object-fit: cover;">
+                <source src="assets/mountain-video.mp4" type="video/mp4">
+              </video>
               <div class="carousel-caption">
                 <h2 class="fw-bold">Aventure in Mountains</h2>
                 <p> Discover trekking and hikking packages.</p>
-                <button class="btn btn-success">View Packages</button>
+                <a href="packages.html" class="btn btn-success">View Packages</a>
               </div>
             </div>
 
             <div class="carousel-item">
-              <img src="images/city.png" class="d-block w-100" height="500" alt="city">
+              <video autoplay muted loop playsinline class="d-block w-100" style="height: 500px; object-fit: cover;">
+                <source src="assets/city-video.mp4" type="video/mp4">
+              </video>
               <div class="carousel-caption">
                 <h2 class="fw-bold">Enjoy City Tours</h2>
                 <p>Book affordable city travel plans.</p>
-                <button class="btn btn-warning">Book Trip</button>
+                <a href="booking.html" class="btn btn-warning">Book Trip</a>
               </div>
             </div>
           </div>
@@ -124,7 +161,7 @@
             <div class="card-body">
               <h5 class="card-title fw-bold">Jaipur</h5>
               <p class="card-text">Explore forts, Palaces, and Rajasthan Culture.</p>
-              <a href="#" class="btn btn-primary">Explore</a>
+              <a href="destination.html" class="btn btn-primary">Explore</a>
             </div>
           </div>
         </div>
@@ -135,7 +172,7 @@
             <div class="card-body">
               <h5 class="card-title fw-bold">Agra</h5>
               <p class="card-text">Visit the Taj Mahal and Explore Mughal history.</p>
-              <a href="#" class="btn btn-primary">Explore</a>
+              <a href="destination.html" class="btn btn-primary">Explore</a>
             </div>
           </div>
         </div>
@@ -146,7 +183,7 @@
             <div class="card-body">
               <h5 class="card-title fw-bold">Goa</h5>
               <p class="card-text">Enjoy beaches, nightlife and water sports.</p>
-              <a href="#" class="btn btn-primary">Explore</a>
+              <a href="destination.html" class="btn btn-primary">Explore</a>
             </div>
           </div>
         </div>
@@ -157,41 +194,62 @@
 
     <!--packages section start-->
     <section class="container my-5">
-      <h2 class="text-center fw-bold mb-4">Featured Packages</h2>
-      <div class="row">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Featured Packages</h2>
+        <p class="text-secondary">Handpicked trips at the best prices</p>
+      </div>
+      <div class="row g-4">
 
-        <div class="col-12 col-md-4 mb-3">
-          <div class="card shadow h-100">
-            <div class="card-body">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card package-card shadow-sm h-100">
+            <div class="position-relative">
+              <img src="images/goa 2.jpg" class="card-img-top" alt="Goa Beach Package">
+              <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 5D/4N</span>
+            </div>
+            <div class="card-body d-flex flex-column">
               <h5 class="fw-bold">Goa Beach Package</h5>
-              <p>Duration: 5 Days / 4 Nights</p>
-              <h4 class="fw-bold">15,999</h4>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
-                Now</button>
+              <p class="text-secondary flex-grow-1">Sun, sand and nightlife — flights, hotel and sightseeing included.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag fw-bold text-primary">&#8377;15,999</span>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
+                  Now</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-md-4 mb-3">
-          <div class="card shadow h-100">
-            <div class="card-body">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card package-card shadow-sm h-100">
+            <div class="position-relative">
+              <img src="images/mountain.jpg" class="card-img-top" alt="Manali Adventure Package">
+              <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 6D/5N</span>
+            </div>
+            <div class="card-body d-flex flex-column">
               <h5 class="fw-bold">Manali Adventure Package</h5>
-              <p>Duration: 6 Days / 5 Nights</p>
-              <h4 class="fw-bold">18,499</h4>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
-                Now</button>
+              <p class="text-secondary flex-grow-1">Trekking, snow points and cozy mountain stays.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag fw-bold text-primary">&#8377;18,499</span>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
+                  Now</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-md-4 mb-3">
-          <div class="card shadow h-100">
-            <div class="card-body">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card package-card shadow-sm h-100">
+            <div class="position-relative">
+              <img src="images/kerala.jpg" class="card-img-top" alt="Kerala Backwater Package">
+              <span class="badge bg-primary badge-duration"><i class="fa-regular fa-clock"></i> 4D/3N</span>
+            </div>
+            <div class="card-body d-flex flex-column">
               <h5 class="fw-bold">Kerala Backwater Package</h5>
-              <p>Duration: 4 Days / 3 Nights</p>
-              <h4 class="fw-bold">12,999</h4>
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
-                Now</button>
+              <p class="text-secondary flex-grow-1">Houseboat cruise, ayurveda and green countryside escapes.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price-tag fw-bold text-primary">&#8377;12,999</span>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book
+                  Now</button>
+              </div>
             </div>
           </div>
         </div>
